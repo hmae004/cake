@@ -28,16 +28,16 @@ jobs:
             
             Please review the changes and merge when ready.
 
-      - name: Create Pull Request from release to master
+      - name: Create Pull Request from release to main
         if: github.ref == 'refs/heads/release'
         uses: repo-sync/pull-request@v2
         with:
-          destination_branch: "master"
+          destination_branch: "main"
           github_token: ${{ secrets.PR_TOKEN }}
-          pr_title: "🚀 Automated PR: release → master"
+          pr_title: "🚀 Automated PR: release → main"
           pr_body: |
             🤖 Automated Pull Request
             
-            This PR was automatically created to promote changes from `release` to `master`.
+            This PR was automatically created to promote changes from `release` to `main`.
             
             Please review the changes carefully as this will go to production.
