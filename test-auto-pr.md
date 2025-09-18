@@ -1,4 +1,4 @@
-# Test Automated PR Creation
+# Test Automated PR Creation (Updated)
 
 This is a test file to demonstrate the automated PR workflow:
 
