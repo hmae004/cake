@@ -32,5 +32,7 @@ const getPullRequests = async () => {
     console.error(err);
     }
 };
+
+console.log('Getting PRs...');
   
 getPullRequests();
