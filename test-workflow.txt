@@ -1,0 +1,8 @@
+Testing the updated workflow with:
+- Explicit source branches
+- Debug information
+- Proper branch detection
+
+This change should:
+1. Create PR from dev → release
+2. After merging to release, create PR from release → main
