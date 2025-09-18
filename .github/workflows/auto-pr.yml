@@ -29,6 +29,8 @@ jobs:
           destination_branch: "release"
           github_token: ${{ secrets.PR_TOKEN }}
           pr_title: "🔄 Automated PR: dev → release"
+          pr_draft: false
+          pr_allow_empty: false
           pr_body: |
             🤖 Automated Pull Request
             
