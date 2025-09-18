@@ -1,0 +1,43 @@
+name: Automatic Pull Request Creation
+
+on:
+  push:
+    branches:
+      - dev
+      - release
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create Pull Request from dev to release
+        if: github.ref == 'refs/heads/dev'
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "release"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "🔄 Automated PR: dev → release"
+          pr_body: |
+            🤖 Automated Pull Request
+            
+            This PR was automatically created to promote changes from `dev` to `release`.
+            
+            Please review the changes and merge when ready.
+
+      - name: Create Pull Request from release to master
+        if: github.ref == 'refs/heads/release'
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "master"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "🚀 Automated PR: release → master"
+          pr_body: |
+            🤖 Automated Pull Request
+            
+            This PR was automatically created to promote changes from `release` to `master`.
+            
+            Please review the changes carefully as this will go to production.
