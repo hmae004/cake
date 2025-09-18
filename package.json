@@ -1,0 +1,25 @@
+{
+  "name": "cake",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/hmae004/cake.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmae004/cake/issues"
+  },
+  "homepage": "https://github.com/hmae004/cake#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0"
+  }
+}
