@@ -13,11 +13,19 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      
+      - name: Debug Info
+        run: |
+          echo "Current ref: ${{ github.ref }}"
+          echo "Current branch: ${{ github.ref_name }}"
+          git branch
+          git status
 
       - name: Create Pull Request from dev to release
         if: github.ref == 'refs/heads/dev'
         uses: repo-sync/pull-request@v2
         with:
+          source_branch: "dev"
           destination_branch: "release"
           github_token: ${{ secrets.PR_TOKEN }}
           pr_title: "🔄 Automated PR: dev → release"
@@ -32,6 +40,7 @@ jobs:
         if: github.ref == 'refs/heads/release'
         uses: repo-sync/pull-request@v2
         with:
+          source_branch: "release"
           destination_branch: "main"
           github_token: ${{ secrets.PR_TOKEN }}
           pr_title: "🚀 Automated PR: release → main"
