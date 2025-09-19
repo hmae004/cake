@@ -66,6 +66,6 @@ const getPullRequests = async () => {
     }
 };
 
-console.log('Getting All the PRs...');
+console.log('Getting PRs...');
   
 getPullRequests();
